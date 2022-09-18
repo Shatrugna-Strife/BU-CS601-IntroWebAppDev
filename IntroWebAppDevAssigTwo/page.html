@@ -1,0 +1,146 @@
+<!DOCTYPE html>
+
+<html lang="en">
+    <head>
+        <title>
+            Assignment 1
+        </title>
+        <meta charset="utf-8">
+        <link rel="icon" href="https://cdn-icons-png.flaticon.com/512/732/732212.png">
+        <style>
+            h1, h2, h3,td,th,label, input,button {
+                font-family:'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+                color:rgb(68, 68, 68);
+            }
+            h3{
+                margin: 0;
+            }
+            p, li, ul, aside{
+                font-family:'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+                color:rgb(107, 107, 107);
+            }
+            .head{
+                padding: 10px 30px;
+                /* background-color: rgb(207, 207, 207); */
+                display: flex;
+                /* width: 100%; */
+                position: relative;
+                margin: 0 0;
+                align-self: center;
+                justify-content: space-between;
+            }
+            body, html{
+                margin:0;
+            }
+            body{
+                overflow-y: auto;
+            }
+            h1{
+                margin: 0;
+                display:inline-block;
+                /* vertical-align: middle; */
+            }
+            .htmlImg{
+                position: relative;
+                width: 37px;
+                margin-left: auto;
+                margin-right: 0;
+                right: 0;
+                display:inline-block;
+            }
+            main{
+                margin: 5px 15px;
+                border-radius: 4px;
+                background-color: rgb(234, 234, 234);
+            }
+            section{
+                margin-top: 10px;
+                margin-left: 10px;
+                margin-bottom: 10px;
+                border-radius: 2px;
+                background-color: rgb(226, 226, 226);
+            }
+            hr{
+                margin: 4px 0;
+            }
+            p{
+                margin-top: 0;
+            }
+            aside{
+                float:right;
+                width:30%;
+                height:150px;
+                text-align: center;
+                vertical-align: middle;
+                background-image: url("http://clipart-library.com/images/rTLojLgBc.jpg");
+                background-size:100% 100%;
+                background-repeat: no-repeat;
+            }
+            footer{
+                margin: 20px;
+                background-color: rgba(0, 255, 255, 0.078);
+                padding: 20px;
+            }
+            table{
+                border-collapse: collapse;
+            }
+            table, th, td{
+                border: 3px solid;
+                border-color: rgb(147, 147, 147);
+            }
+        </style>
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+    </head>
+
+    <body>
+        <header class="head">
+            <h1>
+                Homework 2
+            </h1>
+            <div class="htmlImg">
+                <img src="https://cdn-icons-png.flaticon.com/512/732/732212.png" style="width: 100%;" alt="html5 icon">
+            </div>
+        </header>
+        <div style="height: 20px;background-color: rgb(206, 206, 206);"></div>
+        <main>
+            <h2 style="margin-left: 10px;">Age Calculator</h2>
+            <input type="date" id="date"/>
+            <button id="button">Calculate</button>
+            <p id="age"></p>
+        </main>
+        <footer>
+            <p>
+                Name: <a href="https://www.youtube.com/watch?v=dQw4w9WgXcQ">Shatrugna Rao Korukanti</a>
+            </p>
+            <p>
+                BU Id: U43517028
+            </p>
+        </footer>
+        <script>
+            $(document).ready(()=>{
+                $("#date").attr("max", new Date().toISOString().split('T')[0]);
+                $("#button").click(()=>{
+                    bDate = new Date($("#date").val());
+                    tDate = new Date();
+                    let yearDiff = parseInt(tDate.getUTCFullYear()) - parseInt(bDate.getUTCFullYear());
+                    let monthDiff = parseInt(tDate.getUTCMonth()) - parseInt(bDate.getUTCMonth());
+                    let dayDiff = parseInt(tDate.getUTCDate()) - parseInt(bDate.getUTCDate());
+                    console.log(yearDiff, monthDiff, dayDiff);
+                    let age = yearDiff;
+                    if(monthDiff<0){
+                        age-=1
+                    }
+                    if(monthDiff==0){
+                        if(dayDiff<0){
+                            age-=1
+                        }
+                    }
+                    $("#age").text(`Age is - ${age}`);
+                });
+                $("#date").focusin(()=>{
+                    $("#age").text("");
+                })
+            });
+        </script>
+    </body>
+</html>
