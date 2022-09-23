@@ -3,7 +3,7 @@
 <html lang="en">
     <head>
         <title>
-            Assignment 1
+            Assignment 2
         </title>
         <meta charset="utf-8">
         <link rel="icon" href="https://cdn-icons-png.flaticon.com/512/732/732212.png">
@@ -117,11 +117,12 @@
             </p>
         </footer>
         <script>
-            $(document).ready(()=>{
-                $("#date").attr("max", new Date().toISOString().split('T')[0]);
-                $("#button").click(()=>{
-                    bDate = new Date($("#date").val());
-                    tDate = new Date();
+            document.addEventListener("DOMContentLoaded", ()=>{
+                document.getElementById("date").click()
+                document.getElementById("date").setAttribute("max", new Date().toISOString().split('T')[0]);
+                document.getElementById("button").addEventListener("click",()=>{
+                    let bDate = new Date(document.getElementById("date").value);
+                    let tDate = new Date();
                     let yearDiff = parseInt(tDate.getUTCFullYear()) - parseInt(bDate.getUTCFullYear());
                     let monthDiff = parseInt(tDate.getUTCMonth()) - parseInt(bDate.getUTCMonth());
                     let dayDiff = parseInt(tDate.getUTCDate()) - parseInt(bDate.getUTCDate());
@@ -135,10 +136,11 @@
                             age-=1
                         }
                     }
-                    $("#age").text(`Age is - ${age}`);
+                    if(!isNaN(age)) document.getElementById("age").innerText = `Age is - ${age}`;
+                    else document.getElementById("age").innerText = `Error try entering the date once again`;
                 });
-                $("#date").focusin(()=>{
-                    $("#age").text("");
+                document.getElementById("date").addEventListener("focusin",()=>{
+                    document.getElementById("age").innerText = ""
                 })
             });
         </script>

@@ -1,0 +1,228 @@
+<!DOCTYPE html>
+
+<html lang="eu">
+    <head>
+        <title>
+            Assignment 1
+        </title>
+        <meta charset="utf-8">
+        <link rel="icon" href="https://cdn-icons-png.flaticon.com/512/732/732212.png">
+        <style>
+            h1, h2, h3,td,th,label, input,button {
+                font-family:'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+                color:rgb(68, 68, 68);
+            }
+            h3{
+                margin: 0;
+            }
+            p, li, ul, aside{
+                font-family:'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+                color:rgb(107, 107, 107);
+            }
+            .head{
+                padding: 10px 30px;
+                /* background-color: rgb(207, 207, 207); */
+                display: flex;
+                /* width: 100%; */
+                position: relative;
+                margin: 0 0;
+                align-self: center;
+                justify-content: space-between;
+            }
+            body, html{
+                margin:0;
+            }
+            body{
+                overflow-y: auto;
+            }
+            h1{
+                margin: 0;
+                display:inline-block;
+                /* vertical-align: middle; */
+            }
+            .htmlImg{
+                position: relative;
+                width: 37px;
+                margin-left: auto;
+                margin-right: 0;
+                right: 0;
+                display:inline-block;
+            }
+            main{
+                margin: 5px 15px;
+                border-radius: 4px;
+                background-color: rgb(234, 234, 234);
+            }
+            section{
+                margin-top: 10px;
+                margin-left: 10px;
+                margin-bottom: 10px;
+                border-radius: 2px;
+                background-color: rgb(226, 226, 226);
+            }
+            hr{
+                margin: 4px 0;
+            }
+            p{
+                margin-top: 0;
+            }
+            aside{
+                float:right;
+                width:30%;
+                height:150px;
+                text-align: center;
+                vertical-align: middle;
+                background-image: url("http://clipart-library.com/images/rTLojLgBc.jpg");
+                background-size:100% 100%;
+                background-repeat: no-repeat;
+            }
+            footer{
+                margin: 20px;
+                background-color: rgba(0, 255, 255, 0.078);
+                padding: 20px;
+            }
+            table{
+                border-collapse: collapse;
+            }
+            table, th, td{
+                border: 3px solid;
+                border-color: rgb(147, 147, 147);
+            }
+            .q1{
+                font-size: 10vh;
+
+            }
+        </style>
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+    </head>
+
+    <body>
+        <header class="head">
+            <h1>
+                Homework 1
+            </h1>
+            <div class="htmlImg">
+                <img src="https://cdn-icons-png.flaticon.com/512/732/732212.png" style="width: 100%;" alt="html icon">
+            </div>
+        </header>
+        <div style="height: 20px;background-color: rgb(206, 206, 206);"></div>
+        <main>
+            <article>
+                <h2 style="margin-left: 10px;">HTML TAGS</h2>
+                <section>
+                    <h3>&lt;article&gt; tag</h3>
+                    <hr>
+                    <aside>
+                        <div style="vertical-align: middle;padding:15% 0 ;height:100%;">
+                            I don't know what exactly article does.
+                        </div>
+                    </aside>
+                    <p id="articleTag">
+                        The &lt;article&gt; tag specifies independent, self-contained content.
+                        <br>
+                        An article should make sense on its own and it should be possible to distribute it independently from the rest of the site.
+                        <br>
+                        Potential sources for the &lt;article&gt; element:
+                        
+                        <ul><li>Forum post</li>
+                            <li>Blog post</li>
+                            <li>News story</li>
+                        </ul>
+                        
+                        <p><span style="font-weight:800;">Note:</span> The &lt;article&gt; element does not render as anything special in a browser. However, you can use CSS to style the &lt;article&gt; element</p>
+                    <!-- </p> -->
+                    
+                </section>
+                <section>
+                    <h3>&lt;video&gt; and &lt;audio&gt; tag</h3>
+                    <hr>
+                    <p>
+                        <p>
+                            The &lt;video&gt; tag.
+                            <video width="320" height="240" controls>
+                                <source src="NewsAlert-BreakingNews.mp4" type="video/mp4">
+                                Your browser does not support the video tag.
+                            </video>
+                        </p>
+                        <p>The &lt;audio&gt; tag.</p>
+                        <audio controls>
+                            <source src="audio.mp3" type="audio/mpeg">
+                            Your browser does not support the audio element.
+                        </audio>
+                        <p><span style="font-weight:800;">Note:</span></p> 
+                    <!-- </p> -->
+                    
+                </section>
+                <section>
+                    <h3>&lt;table&gt; tag</h3>
+                    <hr>
+                    <p>
+                        <p>
+                            <table style="width: 20%;">
+                                <thead>
+                                    <tr>
+                                        <th >Name</th>
+                                        <th >Age</th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    <tr>
+                                        <td>Shatru</td>
+                                        <td>22</td>
+                                    </tr>
+                                </tbody>
+                            </table>
+                        <!-- </p> -->
+                        <p><span style="font-weight:800;">Note:</span> It is me</p> 
+                    <!-- </p> -->
+                    
+                </section>
+                <section>
+                    <h3>&lt;form&gt; &lt;form&gt; &lt;form&gt; tag</h3>
+                    <hr>
+                    <p>
+                        <p>
+                            <form action="#" onsubmit="formOnSubmit(this);">
+                                <label for="name">Name:</label>
+                                <input type="text" id="name" name="name"><br><br>
+                                <label for="age">Age:</label>
+                                <input type="number" id="age" name="age"><br><br>
+                                <button id="button">Submit</button>
+                            </form>
+                        <!-- </p> -->
+                        <p><span style="font-weight:800;">Note:</span> It is you</p> 
+                    <!-- </p> -->
+                    <button onclick="clickDog()">Click dog</button>
+                    <p id ="dog"></p>
+                    
+                </section>
+                
+            </article>
+        </main>
+        <footer>
+            <p>
+                Name: <a href="https://www.youtube.com/watch?v=dQw4w9WgXcQ">Shatrugna Rao Korukanti</a>
+            </p>
+            <p>
+                BU Id: U43517028
+            </p>
+        </footer>
+        <script>
+            let formOnSubmit = (form)=>{
+                // form.preventDefault();
+                alert(`Hey ${form.name.value}, your age is ${form.age.value}`)
+            }
+            let clickDog =(e)=>{
+                $("#dog").text($("#dog").text().length==0?"bulldog":"");
+            }
+
+            $(document).ready(()=>{
+                $("p").each(()=>{
+                    console.log("sdasd")
+                    let t = $(this).html();
+                    $(this).html("<span class='q1'>"+t[0] + "</span>" + t.slice(1));
+                })
+            })
+        </script>
+    </body>
+</html>
