@@ -1,0 +1,147 @@
+<!DOCTYPE html>
+
+<html lang="en">
+    <head>
+        <title>
+            Assignment 3.1 - Media Queries
+        </title>
+        <meta charset="utf-8">
+        <link rel="icon" href="https://cdn-icons-png.flaticon.com/512/732/732212.png">
+        <style>
+            body{
+                margin: 0px;
+            }
+            .orangeParent{
+                display: flex;
+                height: 200px;
+                width: 100%;
+                margin: 10px 0;
+            }
+            .orangeClass{
+                display: inline-block;
+                height: 95%;
+                width: 95%;
+                margin: auto 5px;
+                background-color: orange;
+            }
+            .greenClass{
+                height: 200px;
+                /* width: 95%; */
+                margin: auto 5px;
+                background-color: green;
+            }
+            .blueParent{
+                display: flex;
+                height: 200px;
+                width: 100%;
+                /* margin: 10px; */
+            }
+            .blueClass{
+                display: inline-block;
+                height: 95%;
+                width: 95%;
+                margin: auto 5px;
+                background-color: blue;
+            }
+            .greyParent{
+                display: grid;
+                grid-template-columns: auto auto auto auto;
+                height: 200px;
+                width: 100%;
+            }
+            .greyClass{
+                display: inline-block;
+                height: 95%;
+                /* width: calc(100%-2*5px); */
+                margin: auto 5px;
+                background-color: grey;
+            }
+            @media (max-width:768px) {
+                .blueParent{
+                    height: 300px;
+                    flex-direction: column;
+                    margin:0px
+                }
+                .blueClass{
+                    margin: 5px auto;
+                }
+                .orangeParent{
+                    
+                    flex-direction: column;
+                    margin:0px
+                }
+                .orangeClass{
+                    margin: 5px auto;
+                }
+                .greenClass{
+                    height: 150px;
+                    width: 95%;
+                    margin:auto;
+                }
+                .greyClass{
+                    margin: 5px auto;
+                }
+                .greyParent{
+                    grid-template-columns: auto auto;
+                }
+                .greyClass{
+                    width: 90%;
+                    margin: auto;
+                    /* width: calc(100%-32px); */
+                }
+            }
+            @media (max-width:320px) {
+                .blueParent{
+                    height:600px
+                }
+                .greenClass{
+                    height: 100px;
+                    width: 95%;
+                    margin:auto;
+                }
+                .greyParent{
+                    height: 300px;
+                    grid-template-columns: auto;
+                }
+                .greyClass{
+                    width: 95%;
+                    margin: auto;
+                    /* width: calc(100%-16.109px); */
+                }
+            }
+        </style>
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+    </head>
+
+    <body>
+        <div class="orangeParent">
+            <div class="orangeClass">
+                <h1>orange1</h1>
+            </div>
+            <div class="orangeClass">
+                <h1>orange2</h1>
+            </div>
+        </div>
+        <div class="greenClass">
+            <section><h2>green</h2></section>
+        </div>
+        <div class="blueParent">
+            <div class="blueClass">
+                <section><h2>blue1</h2></section>
+            </div>
+            <div class="blueClass">
+                <section><h2>blue2</h2></section>
+            </div>
+            <div class="blueClass">
+                <section><h2>blue3</h2></section>
+            </div>
+        </div>
+        <div class="greyParent">
+            <div class="greyClass">grey1</div>
+            <div class="greyClass">grey2</div>
+            <div class="greyClass">grey3</div>
+            <div class="greyClass">grey4</div>
+        </div>
+    </body>
+        
+</html>
