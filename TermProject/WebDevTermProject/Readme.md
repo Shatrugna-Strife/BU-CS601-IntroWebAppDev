@@ -5,7 +5,7 @@
 ### Tested On
 
 Node v16.17.1\
-Windows 11 Home
+Chrome 113 version
 
 ### Images
 |||
